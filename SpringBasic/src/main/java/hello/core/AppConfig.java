@@ -17,11 +17,13 @@ public class AppConfig { // 구성 영역만 수정하면됨.
 
     @Bean
     public MemberService memberService() {
+        System.out.println("call AppConfig.memberService");
         return new MemberServiceImpl(memberRepository());
     }
 
     @Bean
     public OrderService orderService() {
+        System.out.println("call AppConfig.orderService");
         return new OrderServiceImpl(
                 memberRepository(),
                 discountPolicy());
@@ -29,6 +31,7 @@ public class AppConfig { // 구성 영역만 수정하면됨.
 
     @Bean
     public MemberRepository memberRepository() {
+        System.out.println("call AppConfig.memberRepository");
         return new MemoryMemberRepository(); // 이 부분만 수정하면됨.
     }
 
