@@ -37,7 +37,7 @@ public class OrderServiceTest {
         // given
         Member member = getMember();
 
-        Item item = getItem("JPA",10000,2);
+        Item item = getItem("JPA",10000,10);
 
         int orderCount=2;
         // when
@@ -58,6 +58,7 @@ public class OrderServiceTest {
         item.setName(name);
         item.setPrice(price);
         item.setStockQuantity(q);
+        em.persist(item);
         return item;
     }
 
