@@ -22,3 +22,5 @@ login - 쿠키, 세션, 필터, 인터셉터 공부
 exception - 예외처리, 오류페이지, api 예외처리 공부
 
 typeconverter - 스프링 타입 컨버터 공부
+
+jpashop - jpa 최적화, api 공부
