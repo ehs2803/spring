@@ -24,3 +24,5 @@ exception - 예외처리, 오류페이지, api 예외처리 공부
 typeconverter - 스프링 타입 컨버터 공부
 
 jpashop - jpa 최적화, api 공부
+
+data-jpa - 스프링 데이터 JPA 공부
