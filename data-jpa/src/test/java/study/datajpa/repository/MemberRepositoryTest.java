@@ -9,6 +9,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.transaction.annotation.Transactional;
+import study.datajpa.dto.UsernameOnly;
 import study.datajpa.entity.Member;
 import study.datajpa.entity.Team;
 
@@ -20,7 +21,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 @Transactional
-@Rollback(value = false)
+@Rollback(value = true)
 class MemberRepositoryTest {
     @Autowired
     MemberRepository memberRepository;
@@ -154,5 +155,23 @@ class MemberRepositoryTest {
         Member member = memberRepository.findReadOnlyByUsername("member1");
         member.setUsername("member2");
         em.flush(); //Update Query 실행X
+    }
+
+    @Test
+    public void projections() throws Exception {
+        //given
+        Team teamA = new Team("teamA");
+        em.persist(teamA);
+        Member m1 = new Member("m1", 0, teamA);
+        Member m2 = new Member("m2", 0, teamA);
+        em.persist(m1);
+        em.persist(m2);
+        em.flush();
+        em.clear();
+        //when
+        List<UsernameOnly> result = memberRepository.findProjectionsByUsername("m1");
+        //then
+        Assertions.assertThat(result.size()).isEqualTo(1);
+        System.out.println(result.get(0).getUsername());
     }
 }
