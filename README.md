@@ -28,3 +28,5 @@ jpashop - jpa 최적화, api 공부
 data-jpa - 스프링 데이터 JPA 공부
 
 querydsl - Querydsl 공부
+
+advanced - ThreadLocal, 템플릿 메서드, 전략, 템플릿 콜백 패턴 공부
