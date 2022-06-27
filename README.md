@@ -34,3 +34,6 @@ advanced - ThreadLocal, 템플릿 메서드, 전략, 템플릿 콜백 패턴 공
 proxy - 프록시, 데코레이터 패턴, 동적 프록시, 빈후처리기 공부
 
 aop - aop 공부
+
+jdbc - jdbc, 커넥션풀, DataSource, 트랜잭션, JdbcTemplate 공부
+
