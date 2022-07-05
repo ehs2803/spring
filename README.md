@@ -37,3 +37,5 @@ aop - aop 공부
 
 jdbc - jdbc, 커넥션풀, DataSource, 트랜잭션, JdbcTemplate 공부
 
+itemservice-db - 스프링 JdbcTemplate, MyBatis, JPA, 스프링데이터JPA, Querydsl 공부
+
